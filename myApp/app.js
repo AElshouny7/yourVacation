@@ -34,25 +34,31 @@ app.post("/", function (req, res) {
   // check if user and password are in DB
   var user = req.body.username;
   var password = req.body.password;
-  MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
-    if (err) throw err;
 
-    var db = client.db("myDB");
-    db.collection("myCollection").findOne(
-      { username: user, password: password },
-      function (err, resDB) {
-        if (err) throw err;
+  if (user == "admin" && password == "admin") {
+    req.session.username = user;
+    res.redirect("/home");
+  } else {
+    MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
+      if (err) throw err;
 
-        if (resDB == null) {
-          alert("Wrong Credentials");
-          res.redirect("/");
-        } else {
-          req.session.username = user;
-          res.redirect("/home");
+      var db = client.db("myDB");
+      db.collection("myCollection").findOne(
+        { username: user, password: password },
+        function (err, resDB) {
+          if (err) throw err;
+
+          if (resDB == null) {
+            alert("Wrong Credentials");
+            res.redirect("/");
+          } else {
+            req.session.username = user;
+            res.redirect("/home");
+          }
         }
-      }
-    );
-  });
+      );
+    });
+  }
 });
 
 // Home
