@@ -34,7 +34,7 @@ app.post("/", function (req, res) {
   // check if user and password are in DB
   var user = req.body.username;
   var password = req.body.password;
-  MongoClient.connect("mongodb://0.0.0.0:27017", function (err, client) {
+  MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
     if (err) throw err;
 
     var db = client.db("myDB");
@@ -69,7 +69,7 @@ app.post("/register", function (req, res) {
   // Add user and password are in DB
   var user = req.body.username;
   var password = req.body.password;
-  MongoClient.connect("mongodb://0.0.0.0:27017", function (err, client) {
+  MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
     if (err) throw err;
 
     var db = client.db("myDB");
@@ -140,7 +140,7 @@ app.post("/search", function (req, res) {
 // Add to want to go list posts
 
 app.post("/insertA", function (req, res) {
-  MongoClient.connect("mongodb://0.0.0.0:27017", function (err, client) {
+  MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
     if (err) throw err;
 
     var db = client.db("myDB");
@@ -171,7 +171,7 @@ app.post("/insertA", function (req, res) {
 });
 
 app.post("/insertB", function (req, res) {
-  MongoClient.connect("mongodb://0.0.0.0:27017", function (err, client) {
+  MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
     if (err) throw err;
 
     var db = client.db("myDB");
@@ -202,7 +202,7 @@ app.post("/insertB", function (req, res) {
 });
 
 app.post("/insertI", function (req, res) {
-  MongoClient.connect("mongodb://0.0.0.0:27017", function (err, client) {
+  MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
     if (err) throw err;
 
     var db = client.db("myDB");
@@ -233,7 +233,7 @@ app.post("/insertI", function (req, res) {
 });
 
 app.post("/insertP", function (req, res) {
-  MongoClient.connect("mongodb://0.0.0.0:27017", function (err, client) {
+  MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
     if (err) throw err;
 
     var db = client.db("myDB");
@@ -264,7 +264,7 @@ app.post("/insertP", function (req, res) {
 });
 
 app.post("/insertR", function (req, res) {
-  MongoClient.connect("mongodb://0.0.0.0:27017", function (err, client) {
+  MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
     if (err) throw err;
 
     var db = client.db("myDB");
@@ -295,7 +295,7 @@ app.post("/insertR", function (req, res) {
 });
 
 app.post("/insertS", function (req, res) {
-  MongoClient.connect("mongodb://0.0.0.0:27017", function (err, client) {
+  MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
     if (err) throw err;
 
     var db = client.db("myDB");
@@ -327,7 +327,7 @@ app.post("/insertS", function (req, res) {
 
 // Wanttogo
 app.get("/wanttogo", function (req, res) {
-  MongoClient.connect("mongodb://0.0.0.0:27017", function (err, client) {
+  MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
     if (err) throw err;
 
     var db = client.db("myDB");
