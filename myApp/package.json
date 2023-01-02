@@ -1,0 +1,27 @@
+{
+  "name": "myapp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "plugins": [
+    "jsdom-quokka-plugin"
+  ],
+  "dependencies": {
+    "alert": "^5.1.4",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "fs": "^0.0.1-security",
+    "http-errors": "~1.6.3",
+    "jsdom": "^20.0.3",
+    "mongodb": "^4.12.1",
+    "morgan": "~1.9.1",
+    "node-notifier": "^10.0.1",
+    "popups": "^1.1.3"
+  }
+}
